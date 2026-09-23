@@ -144,6 +144,15 @@
   .featured .price-was{ color:#9c9c9c; }
   .price-sub{ font-size:12px; color:var(--ink-soft); margin-bottom:12px; }
   .featured .price-sub{ color:#c9c9c9; }
+  .terms-strip{
+    font-size:11.5px; font-weight:600; color:#8a5a10;
+    background:rgba(221,153,51,0.12);
+    border-radius:8px;
+    padding:6px 10px;
+    margin-bottom:12px;
+    line-height:1.4;
+  }
+  .featured .terms-strip{ color:var(--gold); background:rgba(221,153,51,0.15); }
   .divider{ border-top:1px solid var(--card-border); margin:0 0 10px; }
   .featured .divider{ border-color:#2c2c2c; }
   .inherits{ font-size:13px; font-style:normal; font-weight:700; color:#8a5a10; margin-bottom:10px; }
@@ -165,7 +174,7 @@
   .grid{
     display:flex;
     flex-direction:column;
-    gap:14px;
+    gap:24px;
     padding:16px 20px 0;
   }
 
@@ -209,6 +218,7 @@
     .price-row{ justify-content:center; }
     .price{ font-size:33px; }
     .price-sub{ text-align:center; }
+    .terms-strip{ text-align:center; }
     .inherits{ font-size:13px; }
     li{ font-size:13px; line-height:1.4; }
     ul{ gap:8px; }
@@ -366,14 +376,13 @@
           <div class="tier-name">Basic</div>
           <div class="price-row"><span class="price">$200</span></div>
           <div class="price-sub">one-time payment</div>
+          <div class="terms-strip">5-day delivery · 3 revisions</div>
           <div class="divider"></div>
           <ul>
-            <li><span class="dot">✓</span>Ideal-buyer research, so your banner design and copy are synced to one target buyer across your profile</li>
-            <li><span class="dot">✓</span>A fully optimized banner design for both mobile and desktop</li>
-            <li><span class="dot">✓</span>Banner copywriting that speaks directly to your buyer</li>
-            <li><span class="dot">✓</span>A clean, professional headshot for your profile photo</li>
-            <li><span class="dot">✓</span>3 revisions</li>
-            <li><span class="dot">✓</span>Delivered within 5 working days</li>
+            <li><span class="dot">✓</span>Ideal-buyer research</li>
+            <li><span class="dot">✓</span>Banner design (mobile + desktop)</li>
+            <li><span class="dot">✓</span>Banner copywriting</li>
+            <li><span class="dot">✓</span>Professional headshot as profile photo</li>
           </ul>
         </div>
 
@@ -382,18 +391,14 @@
           <div class="tier-name">Standard</div>
           <div class="price-row"><span class="price">$350</span></div>
           <div class="price-sub">one-time payment</div>
+          <div class="terms-strip">4-day delivery · 5 revisions</div>
           <div class="divider"></div>
+          <div class="inherits">Everything in Basic, plus:</div>
           <ul>
-            <li><span class="dot">✓</span>Ideal-buyer research</li>
-            <li><span class="dot">✓</span>Fully optimized banner design for mobile and desktop</li>
-            <li><span class="dot">✓</span>Banner copywriting</li>
-            <li><span class="dot">✓</span>Clean, professional headshot for your profile photo</li>
-            <li><span class="dot">✓</span>Written headline that shows your authority and catches your buyer's attention</li>
-            <li><span class="dot">✓</span>Written About section built around your buyer's problem, so they see YOU as the solution</li>
-            <li><span class="dot">✓</span>One custom Featured section card for a booking link, offer, or portfolio piece</li>
+            <li><span class="dot">✓</span>Written headline that catches your buyer's attention</li>
+            <li><span class="dot">✓</span>Written About section that targets your buyer</li>
+            <li><span class="dot">✓</span>1 custom Featured section card</li>
             <li><span class="dot">✓</span>Copywriting for your Featured section card</li>
-            <li><span class="dot">✓</span>5 revisions</li>
-            <li><span class="dot">✓</span>Delivered within 4 working days</li>
           </ul>
         </div>
 
@@ -403,23 +408,15 @@
           <div class="tier-name">Premium</div>
           <div class="price-row"><span class="price">$500</span></div>
           <div class="price-sub">one-time payment</div>
+          <div class="terms-strip">3-day delivery · Up to 10 revisions</div>
           <div class="divider"></div>
+          <div class="inherits">Everything in Standard, plus:</div>
           <ul>
-            <li><span class="dot">✓</span>Ideal-buyer research and market analysis</li>
-            <li><span class="dot">✓</span>Fully optimized banner design for mobile and desktop</li>
-            <li><span class="dot">✓</span>Banner copywriting that speaks directly to your buyer</li>
-            <li><span class="dot">✓</span>Clean, professional headshot for your profile photo</li>
-            <li><span class="dot">✓</span>Written headline that shows your authority and catches your buyer's attention</li>
-            <li><span class="dot">✓</span>Written About section built around your buyer's problem</li>
-            <li><span class="dot">✓</span>2 custom Featured section cards for booking links, offers, and portfolio pieces</li>
-            <li><span class="dot">✓</span>Copywriting for your Featured section cards</li>
-            <li><span class="dot">✓</span>Testimonial design for your Services section</li>
-            <li><span class="dot">✓</span>A cleaned-up, reorganized Experience section</li>
-            <li><span class="dot">✓</span>Custom post template design for your future content</li>
-            <li><span class="dot">✓</span>The editable source file, if you ever need to make changes yourself</li>
-            <li><span class="dot">✓</span>Up to 10 revisions until you're happy</li>
-            <li><span class="dot">✓</span>Delivered within 3 working days</li>
-            <li><span class="dot">✓</span>2 weeks WhatsApp support for any changes or editing</li>
+            <li><span class="dot">✓</span>Market analysis added to buyer research</li>
+            <li><span class="dot">✓</span>Up to 3 custom Featured section cards</li>
+            <li><span class="dot">✓</span>Custom post template design</li>
+            <li><span class="dot">✓</span>Editable source file</li>
+            <li><span class="dot">✓</span>2 weeks WhatsApp support*</li>
           </ul>
         </div>
 
@@ -428,25 +425,15 @@
           <div class="tier-name">Ultimate</div>
           <div class="price-row"><span class="price">$750</span></div>
           <div class="price-sub">one-time payment</div>
+          <div class="terms-strip">48-hour delivery · Unlimited revisions</div>
           <div class="divider"></div>
+          <div class="inherits">Everything in Premium, plus:</div>
           <ul>
-            <li><span class="dot">✓</span>Ideal-buyer research</li>
-            <li><span class="dot">✓</span>Fully optimized banner design for both mobile and desktop</li>
-            <li><span class="dot">✓</span>Banner copywriting that speaks directly to your buyer</li>
-            <li><span class="dot">✓</span>Clean, professional headshot for your profile photo</li>
-            <li><span class="dot">✓</span>Written headline that shows your authority and catches your buyer's attention</li>
-            <li><span class="dot">✓</span>Written About section built around your buyer's problem, so they see you as the solution</li>
-            <li><span class="dot">✓</span>3 custom Featured section cards for booking links, offers, and portfolio pieces</li>
-            <li><span class="dot">✓</span>Copywriting for your Featured section cards</li>
-            <li><span class="dot">✓</span>Testimonial design for your Services section</li>
-            <li><span class="dot">✓</span>A cleaned-up, reorganized Experience section</li>
-            <li><span class="dot">✓</span>Custom post template design for your future content</li>
-            <li><span class="dot">✓</span>Custom carousel template design for your future content</li>
-            <li><span class="dot">✓</span>The editable source file</li>
-            <li><span class="dot">✓</span>Priority delivery within 48 hours</li>
-            <li><span class="dot">✓</span>Unlimited revisions until you're happy</li>
-            <li class="highlight"><span class="dot">✓</span>A free profile review anytime you have doubts down the line</li>
-            <li><span class="dot">✓</span>1 month WhatsApp support</li>
+            <li><span class="dot">✓</span>Up to 4 custom Featured section cards</li>
+            <li><span class="dot">✓</span>Custom carousel template design</li>
+            <li><span class="dot">✓</span>Priority delivery</li>
+            <li><span class="dot">✓</span>Free future profile reviews</li>
+            <li><span class="dot">✓</span>1 month WhatsApp support*</li>
           </ul>
         </div>
 
