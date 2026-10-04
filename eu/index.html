@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LinkedIn Services - Europe Pricing</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#000000;
+    --white:#ffffff;
+    --cream:#f7efe1;
+    --gold:#dd9933;
+    --card-border:rgba(0,0,0,0.10);
+    --ink-soft:rgba(0,0,0,0.6);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{
+    background:var(--cream);
+    color:var(--black);
+    font-family:'Poppins',sans-serif;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+
+  /* ---------- Header: warm dark gradient like the hero ---------- */
+  .topbar{
+    background:radial-gradient(circle at 25% 20%, #3a2409 0%, #150d02 45%, #000000 100%);
+    padding:30px 20px 34px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+    border-bottom:2px solid var(--gold);
+  }
+  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit; }
+  .brand-mark{
+    width:36px; height:36px; border-radius:50%;
+    object-fit:cover;
+    border:1.5px solid var(--gold);
+    flex-shrink:0;
+  }
+  .brand-name{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:18px; line-height:1.2; color:var(--white); }
+  .brand-role{ font-size:12.5px; color:#c9bda3; }
+  .role-br{ display:none; }
+  @media (max-width:899px){ .role-br{ display:inline; } }
+  .titleblock{ text-align:left; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:6px;
+    border:1px solid rgba(221,153,51,0.5);
+    color:var(--gold);
+    font-size:10px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;
+    padding:4px 10px; border-radius:999px; margin-bottom:14px;
+  }
+  .eyebrow .dot{ width:5px; height:5px; border-radius:50%; background:var(--gold); }
+  h1{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:25px; letter-spacing:-0.01em; color:var(--white); line-height:1.15; }
+  .subtitle{ font-size:14.5px; color:#c9bda3; margin-top:10px; }
+
+  /* ---------- Service selector boxes ---------- */
+  .service-select{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    padding:18px 20px 0;
+  }
+  .svc-box{
+    font-family:'Poppins',sans-serif;
+    text-align:left;
+    background:var(--white);
+    border:1.5px solid var(--card-border);
+    border-radius:14px;
+    padding:14px 16px;
+    cursor:pointer;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .svc-title{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:13.5px; color:var(--black); }
+  .svc-sub{ font-size:11px; color:var(--ink-soft); margin-top:2px; }
+  .svc-box.active{
+    border-color:var(--gold);
+    background:var(--black);
+  }
+  .svc-box.active .svc-title{ color:var(--white); }
+  .svc-box.active .svc-sub{ color:var(--gold); }
+
+  .toggle-row{ display:flex; justify-content:center; padding:16px 20px 0; }
+  .toggle{
+    display:flex; gap:4px;
+    background:var(--white);
+    border:1px solid var(--card-border);
+    border-radius:999px; padding:4px;
+    max-width:100%;
+  }
+  .toggle button{
+    font-family:'Poppins',sans-serif; font-size:13px; font-weight:500;
+    border:none; background:transparent; color:var(--black);
+    padding:9px 20px; border-radius:999px; cursor:pointer;
+    transition:background .15s ease,color .15s ease; line-height:1.3;
+    flex:1;
+    white-space:nowrap;
+  }
+  .toggle button.active{ background:var(--gold); color:var(--black); font-weight:600; }
+  .toggle .save-tag{ display:block; font-size:10.5px; font-weight:700; color:var(--gold); opacity:1; margin-top:1px; }
+  .toggle button.active .save-tag{ color:var(--black); opacity:1; }
+
+  @media (max-width:600px){
+    .toggle-row{ padding-left:16px; padding-right:16px; }
+    .toggle{
+      width:100%;
+      padding:6px;
+      gap:2px;
+    }
+    .toggle button{
+      font-size:12.5px;
+      padding:12px 4px;
+    }
+    .toggle .save-tag{ font-size:10px; }
+  }
+
+  .card{
+    border:1px solid var(--card-border);
+    border-radius:16px;
+    padding:18px;
+    background:var(--white);
+    position:relative;
+  }
+  .card.featured{
+    background:radial-gradient(circle at 100% 15%, #4a2e0a 0%, #1a1004 40%, #000000 80%);
+    border:1px solid var(--gold);
+    color:var(--white);
+  }
+  .badge{
+    position:absolute; top:-11px; left:50%; transform:translateX(-50%);
+    background:var(--gold); color:var(--black);
+    font-size:10px; font-weight:600; padding:4px 14px;
+    border-radius:999px; white-space:nowrap;
+  }
+  .tier-tag{ font-size:11px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.06em; }
+  .featured .tier-tag{ color:#b9b9b9; }
+  .tier-name{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:28px; letter-spacing:-0.01em; line-height:1.1; margin:4px 0 14px; }
+  .price-row{ display:flex; align-items:baseline; gap:7px; flex-wrap:wrap; }
+  .price{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:27px; color:var(--gold); }
+  .price-was{ font-size:13px; color:var(--ink-soft); text-decoration:line-through; }
+  .featured .price-was{ color:#9c9c9c; }
+  .price-sub{ font-size:12px; color:var(--ink-soft); margin-bottom:12px; }
+  .featured .price-sub{ color:#c9c9c9; }
+  .terms-strip{
+    font-size:11.5px; font-weight:600; color:#8a5a10;
+    background:rgba(221,153,51,0.12);
+    border-radius:8px;
+    padding:6px 10px;
+    margin-bottom:12px;
+    line-height:1.4;
+  }
+  .featured .terms-strip{ color:var(--gold); background:rgba(221,153,51,0.15); }
+  .divider{ border-top:1px solid var(--card-border); margin:0 0 10px; }
+  .featured .divider{ border-color:#2c2c2c; }
+  .inherits{ font-size:13px; font-style:normal; font-weight:700; color:#8a5a10; margin-bottom:10px; }
+  .featured .inherits{ color:var(--gold); }
+  ul{ list-style:none; display:flex; flex-direction:column; gap:7px; }
+  li{ font-size:13.5px; display:flex; align-items:flex-start; gap:7px; line-height:1.35; }
+  li .dot{ color:var(--gold); font-weight:700; flex-shrink:0; margin-top:1px; font-size:13px; }
+  li.highlight{ color:#8a5a10; font-weight:600; }
+  .featured li.highlight{ color:var(--gold); }
+
+  footer{
+    display:flex; align-items:center; justify-content:space-between;
+    flex-wrap:wrap; gap:6px; font-size:11px; color:var(--ink-soft);
+    padding:14px 20px 30px;
+  }
+  footer a{ color:var(--black); text-decoration:none; border-bottom:1px solid var(--gold); }
+
+  /* ---------- Mobile: natural stacked scroll, always fully readable ---------- */
+  .grid{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+    padding:16px 20px 0;
+  }
+
+  /* ---------- Desktop / wide screens ---------- */
+  @media (min-width:900px){
+    .topbar{ align-items:center; text-align:center; padding:34px 40px 30px; }
+    .brand{ flex-direction:column; gap:8px; }
+    .brand-mark{ width:44px; height:44px; }
+    .brand-name{ font-size:21px; }
+    .brand-role{ font-size:13.5px; }
+    .titleblock{ text-align:center; }
+    .eyebrow{ font-size:11px; padding:5px 14px; }
+    h1{ font-size:38px; }
+    .subtitle{ font-size:16px; }
+
+    .service-select{
+      max-width:760px;
+      margin:0 auto;
+      padding:22px 40px 0;
+      gap:14px;
+    }
+    .svc-box{ padding:18px 12px; text-align:center; }
+    .svc-title{ font-size:16px; white-space:nowrap; }
+    .svc-sub{ font-size:12.5px; }
+
+    .body-area{ display:flex; flex-direction:column; padding:24px 40px 36px; gap:20px; }
+    .toggle-row{ padding:0; }
+    .toggle{ padding:6px; }
+    .toggle button{ font-size:15px; padding:13px 30px; }
+    .toggle .save-tag{ font-size:11px; }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:18px;
+      padding:0;
+      align-items:stretch;
+    }
+    .card{ display:flex; flex-direction:column; padding:24px 22px; }
+    .tier-tag{ text-align:center; font-size:12px; }
+    .tier-name{ text-align:center; font-size:29px; margin:6px 0 14px; }
+    .price-row{ justify-content:center; }
+    .price{ font-size:33px; }
+    .price-sub{ text-align:center; }
+    .terms-strip{ text-align:center; }
+    .inherits{ font-size:13px; }
+    li{ font-size:13px; line-height:1.4; }
+    ul{ gap:8px; }
+    footer{ padding:0 40px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="topbar">
+    <a class="brand" href="https://www.linkedin.com/in/syedattaullah96" target="_blank" rel="noopener" aria-label="Syed Attaullah Shah on LinkedIn">
+      <img class="brand-mark" src="data:image/jpeg;base64,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" alt="Syed Attaullah Shah">
+      <div>
+        <div class="brand-name">Syed Attaullah Shah</div>
+        <div class="brand-role">LinkedIn Ghostwriter and<br class="role-br"> Personal Branding Strategist</div>
+      </div>
+    </a>
+    <div class="titleblock">
+      <div class="eyebrow" id="eyebrow"><span class="dot"></span>LinkedIn Profile Management</div>
+      <h1>Choose Your Pricing Plan</h1>
+      <div class="subtitle">Pricing in EUR for clients across Europe.</div>
+    </div>
+  </div>
+
+  <div class="service-select">
+    <button class="svc-box active" data-service="management">
+      <div class="svc-title">LinkedIn Profile Management</div>
+      <div class="svc-sub">Monthly retainer</div>
+    </button>
+    <button class="svc-box" data-service="optimization">
+      <div class="svc-title">LinkedIn Profile Optimization</div>
+      <div class="svc-sub">One-time service</div>
+    </button>
+  </div>
+
+  <!-- ================= MANAGEMENT CONTENT ================= -->
+  <div id="content-management">
+
+    <div class="body-area">
+
+      <div class="toggle-row">
+        <div class="toggle" id="toggle">
+          <button class="active" data-period="monthly">Monthly</button>
+          <button data-period="q90">90 days<span class="save-tag">Save 10%</span></button>
+          <button data-period="m6">6 months<span class="save-tag">Save 20%</span></button>
+          <button data-period="y12">12 months<span class="save-tag">Save 30%</span></button>
+        </div>
+      </div>
+
+      <div class="grid">
+
+        <div class="card" data-tier="basic">
+          <div class="tier-tag">Best for beginners</div>
+          <div class="tier-name">Basic</div>
+          <div class="price-row"><span class="price price-val">€449</span><span class="price-was price-was-val"></span></div>
+          <div class="price-sub price-sub-val">per month</div>
+          <div class="divider"></div>
+          <ul>
+            <li><span class="dot">✓</span>Market and industry research</li>
+            <li><span class="dot">✓</span>Growth and content strategy</li>
+            <li><span class="dot">✓</span>Content calendar</li>
+            <li><span class="dot">✓</span>Copywriting (post)</li>
+            <li><span class="dot">✓</span>2 posts per week</li>
+            <li><span class="dot">✓</span>Text and image posts only</li>
+            <li><span class="dot">✓</span>2 hours dedicated WhatsApp support daily</li>
+            <li><span class="dot">✓</span>10 comments per posting day</li>
+            <li><span class="dot">✓</span>DM: personalized connection requests</li>
+            <li><span class="dot">✓</span>20 targeted connections per week</li>
+          </ul>
+        </div>
+
+        <div class="card" data-tier="standard">
+          <div class="tier-tag">Best for busy professionals</div>
+          <div class="tier-name">Standard</div>
+          <div class="price-row"><span class="price price-val">€599</span><span class="price-was price-was-val"></span></div>
+          <div class="price-sub price-sub-val">per month</div>
+          <div class="divider"></div>
+          <div class="inherits">Everything in Basic, plus:</div>
+          <ul>
+            <li><span class="dot">✓</span>Performance review and optimization</li>
+            <li><span class="dot">✓</span>Monthly strategy calls</li>
+            <li><span class="dot">✓</span>Basic visuals (design)</li>
+            <li><span class="dot">✓</span>3 posts per week</li>
+            <li><span class="dot">✓</span>WhatsApp support, business hours</li>
+            <li><span class="dot">✓</span>15 comments per posting day</li>
+            <li><span class="dot">✓</span>DM: connection requests + replies tracked</li>
+            <li><span class="dot">✓</span>30 targeted connections per week</li>
+          </ul>
+        </div>
+
+        <div class="card featured" data-tier="premium">
+          <span class="badge">Recommended</span>
+          <div class="tier-tag">Best for founders and CEOs</div>
+          <div class="tier-name">Premium</div>
+          <div class="price-row"><span class="price price-val">€849</span><span class="price-was price-was-val"></span></div>
+          <div class="price-sub price-sub-val">per month</div>
+          <div class="divider"></div>
+          <div class="inherits">Everything in Standard, plus:</div>
+          <ul>
+            <li><span class="dot">✓</span>Competitor analysis</li>
+            <li><span class="dot">✓</span>Messaging and positioning clarity</li>
+            <li><span class="dot">✓</span>Commenting and engagement strategy</li>
+            <li><span class="dot">✓</span>Biweekly strategy calls</li>
+            <li><span class="dot">✓</span>On-demand visuals</li>
+            <li><span class="dot">✓</span>4 posts per week</li>
+            <li><span class="dot">✓</span>Text, image, and carousel posts</li>
+            <li><span class="dot">✓</span>24/7 WhatsApp support</li>
+            <li><span class="dot">✓</span>15 comments per day</li>
+            <li><span class="dot">✓</span>DM: connection requests, replies tracked, warm-lead follow-ups</li>
+            <li><span class="dot">✓</span>100 targeted connections per week</li>
+          </ul>
+        </div>
+
+        <div class="card" data-tier="ultimate">
+          <div class="tier-tag">Best for businesses and creators</div>
+          <div class="tier-name">Ultimate</div>
+          <div class="price-row"><span class="price price-val">€1,299</span><span class="price-was price-was-val"></span></div>
+          <div class="price-sub price-sub-val">per month</div>
+          <div class="divider"></div>
+          <div class="inherits">Everything in Premium, plus:</div>
+          <ul>
+            <li><span class="dot">✓</span>On-demand strategy calls</li>
+            <li><span class="dot">✓</span>Pro visual presentation</li>
+            <li><span class="dot">✓</span>5 posts per week</li>
+            <li><span class="dot">✓</span>All post types</li>
+            <li><span class="dot">✓</span>Advanced commenting strategy</li>
+            <li><span class="dot">✓</span>24/7 WhatsApp support + priority access</li>
+            <li><span class="dot">✓</span>30 comments per day</li>
+            <li><span class="dot">✓</span>Full DM solution and follow-up management</li>
+            <li><span class="dot">✓</span>Max targeted connections per week</li>
+            <li class="highlight"><span class="dot">✓</span>Free full profile optimization*</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer>
+      <span>*Terms and conditions apply.<br>Frequency and scope adjust with plan tier.</span>
+      <span>Questions? <a href="https://www.linkedin.com/in/syedattaullah96" target="_blank" rel="noopener">Message me directly on LinkedIn</a>.</span>
+    </footer>
+  </div>
+
+  <!-- ================= OPTIMIZATION CONTENT ================= -->
+  <div id="content-optimization" style="display:none;">
+
+    <div class="body-area">
+
+      <div class="grid">
+
+        <div class="card" data-tier="opt-basic">
+          <div class="tier-tag">Best for beginners</div>
+          <div class="tier-name">Basic</div>
+          <div class="price-row"><span class="price">€175</span></div>
+          <div class="price-sub">one-time payment</div>
+          <div class="terms-strip">5-day delivery · 3 revisions</div>
+          <div class="divider"></div>
+          <ul>
+            <li><span class="dot">✓</span>Ideal-buyer research</li>
+            <li><span class="dot">✓</span>Banner design (mobile + desktop)</li>
+            <li><span class="dot">✓</span>Banner copywriting</li>
+            <li><span class="dot">✓</span>Professional headshot as profile photo</li>
+          </ul>
+        </div>
+
+        <div class="card" data-tier="opt-standard">
+          <div class="tier-tag">Best for busy professionals</div>
+          <div class="tier-name">Standard</div>
+          <div class="price-row"><span class="price">€300</span></div>
+          <div class="price-sub">one-time payment</div>
+          <div class="terms-strip">4-day delivery · 5 revisions</div>
+          <div class="divider"></div>
+          <div class="inherits">Everything in Basic, plus:</div>
+          <ul>
+            <li><span class="dot">✓</span>Written headline that catches your buyer's attention</li>
+            <li><span class="dot">✓</span>Written About section that targets your buyer</li>
+            <li><span class="dot">✓</span>1 custom Featured section card</li>
+            <li><span class="dot">✓</span>Copywriting for your Featured section card</li>
+          </ul>
+        </div>
+
+        <div class="card featured" data-tier="opt-premium">
+          <span class="badge">Recommended</span>
+          <div class="tier-tag">Best for founders and CEOs</div>
+          <div class="tier-name">Premium</div>
+          <div class="price-row"><span class="price">€425</span></div>
+          <div class="price-sub">one-time payment</div>
+          <div class="terms-strip">3-day delivery · Up to 10 revisions</div>
+          <div class="divider"></div>
+          <div class="inherits">Everything in Standard, plus:</div>
+          <ul>
+            <li><span class="dot">✓</span>Market analysis added to buyer research</li>
+            <li><span class="dot">✓</span>Up to 3 custom Featured section cards</li>
+            <li><span class="dot">✓</span>Custom post template design</li>
+            <li><span class="dot">✓</span>Editable source file</li>
+            <li><span class="dot">✓</span>2 weeks WhatsApp support*</li>
+          </ul>
+        </div>
+
+        <div class="card" data-tier="opt-ultimate">
+          <div class="tier-tag">Best for businesses and creators</div>
+          <div class="tier-name">Ultimate</div>
+          <div class="price-row"><span class="price">€650</span></div>
+          <div class="price-sub">one-time payment</div>
+          <div class="terms-strip">48-hour delivery · Unlimited revisions</div>
+          <div class="divider"></div>
+          <div class="inherits">Everything in Premium, plus:</div>
+          <ul>
+            <li><span class="dot">✓</span>Up to 4 custom Featured section cards</li>
+            <li><span class="dot">✓</span>Custom carousel template design</li>
+            <li><span class="dot">✓</span>Priority delivery</li>
+            <li><span class="dot">✓</span>Free future profile reviews</li>
+            <li><span class="dot">✓</span>1 month WhatsApp support*</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer>
+      <span>*Terms and conditions apply.<br>One-time service, no recurring charge.</span>
+      <span>Questions? <a href="https://www.linkedin.com/in/syedattaullah96" target="_blank" rel="noopener">Message me directly on LinkedIn</a>.</span>
+    </footer>
+  </div>
+
+</div>
+
+<script>
+const data = {
+  basic:    { monthly:["€449","","per month"], q90:["€1,212","€1,347","for 90 days"], m6:["€2,155","€2,694","for 6 months"], y12:["€3,772","€5,388","for 12 months"] },
+  standard: { monthly:["€599","","per month"], q90:["€1,617","€1,797","for 90 days"], m6:["€2,875","€3,594","for 6 months"], y12:["€5,032","€7,188","for 12 months"] },
+  premium:  { monthly:["€849","","per month"], q90:["€2,292","€2,547","for 90 days"], m6:["€4,075","€5,094","for 6 months"], y12:["€7,132","€10,188","for 12 months"] },
+  ultimate: { monthly:["€1,299","","per month"], q90:["€3,507","€3,897","for 90 days"], m6:["€6,235","€7,794","for 6 months"], y12:["€10,912","€15,588","for 12 months"] }
+};
+
+const buttons = document.querySelectorAll('#toggle button');
+const mgmtCards = document.querySelectorAll('#content-management .card');
+
+function setPeriod(period){
+  buttons.forEach(b => b.classList.toggle('active', b.dataset.period === period));
+  mgmtCards.forEach(c => {
+    const tier = c.dataset.tier;
+    if(!data[tier]) return;
+    const [price, was, sub] = data[tier][period];
+    c.querySelector('.price-val').textContent = price;
+    const wasEl = c.querySelector('.price-was-val');
+    wasEl.textContent = was;
+    wasEl.style.display = was ? 'inline' : 'none';
+    c.querySelector('.price-sub-val').textContent = sub;
+  });
+}
+
+buttons.forEach(b => b.addEventListener('click', () => setPeriod(b.dataset.period)));
+setPeriod('monthly');
+
+/* ---- Service selector ---- */
+const svcBoxes = document.querySelectorAll('.svc-box');
+const mgmtContent = document.getElementById('content-management');
+const optContent = document.getElementById('content-optimization');
+
+const eyebrow = document.getElementById('eyebrow');
+const eyebrowLabels = {
+  management: 'LinkedIn Profile Management',
+  optimization: 'LinkedIn Profile Optimization'
+};
+
+svcBoxes.forEach(box => {
+  box.addEventListener('click', () => {
+    svcBoxes.forEach(b => b.classList.remove('active'));
+    box.classList.add('active');
+    const svc = box.dataset.service;
+    mgmtContent.style.display = svc === 'management' ? '' : 'none';
+    optContent.style.display = svc === 'optimization' ? '' : 'none';
+    eyebrow.innerHTML = '<span class="dot"></span>' + eyebrowLabels[svc];
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
